@@ -38,21 +38,21 @@ class Song
   end
 
   def self.alphabetical
-    @@all.sort_by{ |song| song.name}
+    @@all.sort_by{|song| song.name}
   end
 
   def self.new_from_filename(filename)
-    rows = filename.chomp(".mp3").split(" - ")
-    song = Song.new
-    song.name = rows[1]
-    song.artist_name = rows[0]
+    song_entries = filename.chomp(".mp3").split(" - ")
+    song = self.new
+    song.name = song_entries[1]
+    song.artist_name = song_entries[0]
     song
   end
 
 
   def self.create_from_filename(filename)
     rows = filename.chomp(".mp3").split(" - ")
-    song = Song.new
+    song = self.new
     song.name = rows[1]
     song.artist_name = rows[0]
     song.save
