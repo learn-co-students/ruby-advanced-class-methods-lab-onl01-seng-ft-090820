@@ -69,12 +69,11 @@ class Song
     # binding.pry
     file_arr[1].slice!(".mp3")
     artist_name = file_arr[0]
-    # @artist_name = file_arr[0]
-    @artist_name = artist_name
-    song.artist_name = @artist_name
+    # @artist_name = artist_name
+    song.artist_name = artist_name
     name = file_arr[1] 
     song.name = name
-    @name = name
+    # @name = name
     @@all << song 
   end
   
