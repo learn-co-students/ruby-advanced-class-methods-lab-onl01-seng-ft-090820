@@ -47,12 +47,16 @@ class Song
     
     song = self.new
     song.name = song_name
-    song.artist_name = parts
+    song.artist_name = artist_name
     song
-    
   end 
   
-  def self.create_from_filename(artist_name)
+  def self.create_from_filename(filename)
+    answer = self.new_from_filename(filename)
+    song = self.create
+    song.name = answer.name
+    song.artist_name = answer.artist_name
+    song
   end 
   
   def self.destroy_all
